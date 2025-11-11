@@ -64,7 +64,7 @@ export default function FuliSelect({ listItem, title }: fuliSelectProps) {
                     {listItem.map((item) => (
                         <div
                             key={item.title}
-                            className="bg-gray-900 text-white shadow-lg p-5 w-70 border-l-black border-l-1"
+                            className="bg-[#262626] text-white shadow-lg p-5 w-[300] border-l-black border-l"
                         >
                             <div className='mb-8'>{item.title}</div>
                             {item.item.map((entity, index2) => (
@@ -73,12 +73,14 @@ export default function FuliSelect({ listItem, title }: fuliSelectProps) {
                         </div>
                     ))}
                     <div
-                        className="bg-gray-900 text-white shadow-lg p-5 w-70 border-l-black border-l-1"
+                        className="bg-[#262626] text-white shadow-lg p-5 w-[270px] border-l-black border-l"
                     >
-                        <div className='flex flex-col items-center pt-5 gap-5'>
-                            <Image src="/fuli.png" alt="fuli" width={180} height={180} />
-                            <div >福利中心</div>
-                            <button className='border-white border-1 px-16 py-2 rounded-3xl text-[14px] hover:cursor-pointer hover:bg-white hover:text-black hover:font-bold'>详情</button>
+                        <div className='flex flex-col items-center pt-5 px-4 gap-5 justify-between h-full'>
+                            <div className='flex flex-col items-center pt-5 gap-5'>
+                                <Image src="/fuli.png" alt="fuli" width={180} height={180} />
+                                <div >福利中心</div>
+                            </div>
+                            <button className='border-white w-full border py-3 rounded-3xl text-[14px] hover:cursor-pointer hover:bg-white hover:text-black hover:font-bold'>详情</button>
                         </div>
                     </div>
                 </div>

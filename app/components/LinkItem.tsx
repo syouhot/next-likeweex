@@ -15,7 +15,7 @@ export default function LinkItem({ icon, text, description, titleIcon }: LinkIte
                     {text}
                     {titleIcon && <div className="w-6 h-6">{titleIcon}</div>}
                 </div>
-                <div className=" w-[170px] text-sm text-gray-400 text-[12px]">{description}</div>
+                <div className=" w-[200px] h-[20px] text-sm text-gray-400 text-[12px]">{description}</div>
             </div>
         </div>
     )

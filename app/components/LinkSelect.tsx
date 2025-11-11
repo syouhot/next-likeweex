@@ -53,7 +53,7 @@ export default function LinkSelect({ title, listItem }: LinkSelectProps) {
             </div>
             {isHovered && (
                 <div
-                    className="absolute top-10 left-0 mt-1 bg-gray-900 text-white rounded-2xl shadow-lg z-10 p-5 w-70"
+                    className="absolute top-10 left-0 mt-1 bg-[#262626] text-white rounded-2xl shadow-lg z-10 p-5 w-70 flex gap-2 flex-col"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >

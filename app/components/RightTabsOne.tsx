@@ -27,11 +27,14 @@ export default function RightTabsOne({ className }: { className?: string }) {
     const [isHovering2, setIsHovering2] = React.useState<boolean>(false)
     const [active1, setActive1] = React.useState<number>(0)
     const [active2, setActive2] = React.useState<number>(0)
+    const [sliderValue, setSliderValue] = React.useState<number>(0)
     const handleChangeCheckbox = (value: number) => {
         checkBox !== value ? setCheckBox(value) : setCheckBox(null)
 
     }
-    const setSliderValue = () => { }
+    const changeSliderValue = (e: number) => { 
+        setSliderValue(e)
+    }
     // 清除关闭定时器
     const clearCloseTimer = () => {
         if (closeTimer.current) {
@@ -93,7 +96,7 @@ export default function RightTabsOne({ className }: { className?: string }) {
                 <div className='my-6 px-2'>
                     <CustomSlider
                         value={1}
-                        onChange={setSliderValue}
+                        onChange={changeSliderValue}
                         min={0}
                         max={100}
                         step={1}
@@ -115,7 +118,7 @@ export default function RightTabsOne({ className }: { className?: string }) {
                         </div>
                     </div>
                     {
-                        checkBox && <div>
+                        (checkBox || sliderValue>0) && <div>
                             <div className='flex flex-row'>
                                 <div className='flex flex-row w-full my-5 items-end gap-2 text-[10px]'>
                                     <div className="grid flex-2 items-center gap-3 relative">
