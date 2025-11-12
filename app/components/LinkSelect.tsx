@@ -43,7 +43,7 @@ export default function LinkSelect({ title, listItem }: LinkSelectProps) {
 
     return (
         <div
-            className="flex flex-col relative"
+            className="flex flex-col relative z-20"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >

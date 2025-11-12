@@ -13,34 +13,34 @@ const listItem = [
     }
 ]
 const number1 = [
-    ["103.584.9", "20.567", "34.0253"],
-    ["103.245.3", "19.876", "28.7621"],
-    ["103.789.1", "18.432", "22.9843"],
-    ["103.123.6", "17.987", "19.6524"],
-    ["103.654.2", "16.321", "15.7832"],
-    ["103.321.8", "15.654", "12.4567"],
-    ["103.876.4", "14.987", "9.8723"],
-    ["103.234.7", "13.210", "6.5432"],
-    ["103.765.9", "12.543", "3.7891"],
-    ["103.432.1", "11.876", "1.1567"],
+    ["103.584.9", "20.567", "34.0253","100%"],
+    ["103.245.3", "19.876", "28.7621","90%"],
+    ["103.789.1", "18.432", "22.9843","85%"],
+    ["103.123.6", "17.987", "19.6524","72%"],
+    ["103.654.2", "16.321", "15.7832","65%"],
+    ["103.321.8", "15.654", "12.4567","50%"],
+    ["103.876.4", "14.987", "9.8723","45%"],
+    ["103.234.7", "13.210", "6.5432","30%"],
+    ["103.765.9", "12.543", "3.7891","16%"],
+    ["103.432.1", "11.876", "1.1567","5%"],
 ]
 
 const number2 = [
-    ["103.584.9", "0.1255", "0.1255"],
-    ["103.245.3", "0.4567", "2.3456"],
-    ["103.789.1", "0.7890", "4.5678"],
-    ["103.123.6", "1.2345", "8.9012"],
-    ["103.654.2", "1.6789", "12.3456"],
-    ["103.321.8", "2.1234", "18.7890"],
-    ["103.876.4", "2.5678", "24.1234"],
-    ["103.234.7", "3.0123", "30.4567"],
-    ["103.765.9", "3.4567", "33.7890"],
-    ["103.432.1", "3.9876", "36.3254"],
+    ["103.584.9", "0.1255", "0.1255","5%"],
+    ["103.245.3", "0.4567", "2.3456","16%"],
+    ["103.789.1", "0.7890", "4.5678","25%"],
+    ["103.123.6", "1.2345", "8.9012","33%"],
+    ["103.654.2", "1.6789", "12.3456","45%"],
+    ["103.321.8", "2.1234", "18.7890","50%"],
+    ["103.876.4", "2.5678", "24.1234","60%"],
+    ["103.234.7", "3.0123", "30.4567","75%"],
+    ["103.765.9", "3.4567", "33.7890","90%"],
+    ["103.432.1", "3.9876", "36.3254","99%"],
 ]
 export default function TabsOne() {
     const [active, setActive] = useState(0)
     const [isHovered, setIsHovered] = useState(false)
-    const [proportion, setProportion] = useState(0.25)
+    const [proportion, setProportion] = useState(0.35)
 
     return (
         <div className='text-gray-500 relative px-3 py-1'>
@@ -68,10 +68,11 @@ export default function TabsOne() {
                 <div className='flex-1 text-right'>总量(BTC)</div>
             </div>
             {number1.map((item, index) => (
-                <div key={index} className='text-[13px] flex justify-between items-center my-2 text-[14px] leading-4'>
-                    <div className='flex-1 text-left text-red-700'>{item[0]}</div>
-                    <div className='flex-1 text-right text-gray-400'>{item[1]}</div>
-                    <div className='flex-1 text-right text-gray-400'>{item[2]}</div>
+                <div key={index} className='relative text-[13px] flex justify-between items-center py-1 text-[14px] leading-4'>
+                    <div className='absolute h-full bg-[#2a1a1b] opacity-50 top-0 right-0' style={{ width: `${item[3]}` }}></div>
+                    <div className='flex-1 text-left text-red-700 z-10'>{item[0]}</div>
+                    <div className='flex-1 text-right text-gray-400 z-10'>{item[1]}</div>
+                    <div className='flex-1 text-right text-gray-400 z-10'>{item[2]}</div>
                 </div>
             ))}
             <div className='text-[18px] font-bold text-red-700 flex items-center my-2 gap-2'>
@@ -79,18 +80,19 @@ export default function TabsOne() {
                 <FaArrowDownLong className='text-red-700' size={14} />
             </div>
             {number2.map((item, index) => (
-                <div key={index} className='text-[13px] flex justify-between items-center my-2 text-[14px] leading-4'>
-                    <div className='flex-1 text-left text-green-700'>{item[0]}</div>
-                    <div className='flex-1 text-right text-gray-400'>{item[1]}</div>
-                    <div className='flex-1 text-right text-gray-400'>{item[2]}</div>
+                <div key={index} className='relative text-[13px] flex justify-between items-center py-1 text-[14px] leading-4'>
+                    <div className='absolute h-full bg-[#15251e] opacity-50 top-0 right-0' style={{ width: `${item[3]}` }}></div>
+                    <div className='flex-1 text-left text-green-700 z-10'>{item[0]}</div>
+                    <div className='flex-1 text-right text-gray-400 z-10'>{item[1]}</div>
+                    <div className='flex-1 text-right text-gray-400 z-10'>{item[2]}</div>
                 </div>
             ))}
-            <div className='text-[18px] font-bold text-red-700 flex items-center my-2 flex-row relative h-[30px]'>
-                <div className={`absolute text-green-700 text-left flex flex-row w-[${proportion * 100}%] item-center gap-2`} style={{ clipPath: 'polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%)', backgroundColor: '#15251e' }}>
+            <div className='text-[18px] font-bold text-red-700 flex items-center my-2 flex-row relative h-[30px] w-full'>
+                <div className="absolute text-green-700 text-left flex flex-row item-center gap-2" style={{ width: `${proportion * 100}%`, clipPath: 'polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%)', backgroundColor: '#15251e' }}>
                     <div className='border-2 rounded px-[4px] py-[1px] border-green-700 w-6 h-6 flex items-center justify-center'>B</div>
                     <div className='text-[14px] pt-0.5'>{proportion * 100}%</div>
                 </div>
-                <div className={`absolute right-0 justify-end flex flex-row w-[${(1 - proportion) * 100}%] item-center gap-2`} style={{ clipPath: 'polygon(20px 0, 100% 0, 100% 100%, 0 100%)', backgroundColor: '#2a1a1b' }}>
+                <div className="absolute right-0 justify-end flex flex-row item-center gap-2" style={{ width: `${(1 - proportion) * 100}%`, clipPath: 'polygon(20px 0, 100% 0, 100% 100%, 0 100%)', backgroundColor: '#2a1a1b' }}>
                     <div className='text-[14px] pt-0.5'>{(1 - proportion) * 100}%</div>
                     <div className='border-2 rounded px-[4px] py-[1px] border-red-700 w-6 h-6 flex items-center justify-center'>S</div>
                 </div>

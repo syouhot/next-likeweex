@@ -16,7 +16,7 @@ export default function LeftNumber({ className }: { className?: string }) {
         <TabsContent value="account">
           <TabsOne />
         </TabsContent>
-        <TabsContent value="password">在这里更改你的密码。</TabsContent>
+        <TabsContent value="password">尽请期待</TabsContent>
       </Tabs>
     </div>
   )
