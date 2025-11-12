@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa'
 import { IoMdSwitch } from "react-icons/io";
